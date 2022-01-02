@@ -1,0 +1,20 @@
+{
+  "name": "prime-numbers",
+  "version": "1.0.0",
+  "description": "prime-numbers",
+  "main": "index.js",
+  "scripts": {
+    "simple-benchmark": "node simple-benchmark.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tswistak/prime-numbers.git"
+  },
+  "keywords": [],
+  "author": "tswistak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tswistak/prime-numbers/issues"
+  },
+  "homepage": "https://github.com/tswistak/prime-numbers#readme"
+}
