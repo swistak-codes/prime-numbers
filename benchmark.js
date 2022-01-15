@@ -10,7 +10,7 @@ function benchmark(functions, inputs, tries) {
                 const startTime = process.hrtime();
                 func(input);
                 const endTime = process.hrtime(startTime);
-                sum += endTime[0] * 1000000 + endTime[1]
+                sum += endTime[0] * 1000000 + endTime[1];
             }
             line.push(sum / tries);
         }

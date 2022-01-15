@@ -4,7 +4,8 @@
   "description": "prime-numbers",
   "main": "index.js",
   "scripts": {
-    "simple-benchmark": "node simple-benchmark.js"
+    "simple-benchmark": "node simple-benchmark.js",
+    "generators-benchmark": "node generators-benchmark.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/tswistak/prime-numbers/issues"
   },
-  "homepage": "https://github.com/tswistak/prime-numbers#readme"
+  "homepage": "https://github.com/tswistak/prime-numbers#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
 }
