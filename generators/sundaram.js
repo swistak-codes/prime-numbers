@@ -24,5 +24,3 @@ function sundaram(n) {
 }
 
 module.exports = sundaram;
-
-console.log(sundaram(100));
