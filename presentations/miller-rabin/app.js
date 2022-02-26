@@ -12,7 +12,7 @@ abortButton.style.display = "none";
 
 startButton.addEventListener("click", () => {
     // ograniczenie 53 bity wynika z tego, że korzystamy z JSowego Number
-    const bits = Math.min(53, Math.max(bitsInput.valueAsNumber, 2));
+    const bits = Math.min(53, Math.max(bitsInput.valueAsNumber, 3));
     triesSpan.textContent = "-";
     numberDiv.style.display = "none";
     primeDiv.style.display = "none";

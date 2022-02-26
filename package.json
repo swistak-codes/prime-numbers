@@ -2,10 +2,11 @@
   "name": "prime-numbers",
   "version": "1.0.0",
   "description": "prime-numbers",
+  "source": "presentations/miller-rabin/index.html",
   "scripts": {
     "simple-benchmark": "node simple-benchmark.js",
     "generators-benchmark": "node generators-benchmark.js",
-    "miller-rabin": "parcel presentations/miller-rabin/index.html",
+    "miller-rabin": "parcel",
     "build": "parcel build --no-source-maps"
   },
   "repository": {
@@ -20,14 +21,7 @@
   },
   "homepage": "https://github.com/tswistak/prime-numbers#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.3.2",
     "parcel": "^2.3.2",
     "prettier": "^2.5.1"
-  },
-  "targets": {
-    "miller-rabin": {
-      "source": "presentations/miller-rabin/index.html",
-      "distDir": "./dist/miller-rabin/"
-    }
   }
 }
