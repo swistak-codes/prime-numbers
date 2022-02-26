@@ -1,0 +1,8 @@
+function random(min, max) {
+    // min i max włącznie
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+module.exports = random;

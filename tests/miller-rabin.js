@@ -1,3 +1,5 @@
+const random = require("../helpers/random");
+
 function modPow(b, e, m) {
     // 1. Ustawiamy c = 1
     let c = 1;
@@ -24,20 +26,13 @@ function factorize(x) {
     let d = x;
     // 2. Dopóki d jest parzyste:
     while ((d & 1) === 0) {
-        // 2.1. Podziel całkowitoliczbowo mnożnik przez 2: d = d >> 1
-        d = d >> 1;
+        // 2.1. Podziel całkowitoliczbowo mnożnik przez 2
+        d = Math.trunc(d / 2);
         // 2.2. Zwiększ s: s = s + 1;
         s++;
     }
     // 3. Zwróć s i d.
     return { s, d };
-}
-
-function random(min, max) {
-    // min i max włącznie
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 function millerRabin(n, k) {

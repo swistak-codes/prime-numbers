@@ -13,3 +13,5 @@ Available to run:
 
 - Benchmark of trial division tests: `npm run simple-benchmark`
 - Benchmark of simple generators: `npm run generators-benchmark`
+- Rabin-Miller presentation: `npm run rabin-miller`
+- Build for presentations: `npm run build`

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prezentacja - test Millera-Rabina</title>
+    <script type="module" src="app.js"></script>
+    <link href="styles.scss" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>Generator liczb pierwszych</h1>
+        <h2>bazujący na teście Millera-Rabina</h2>
+        <div class="container">
+            <div class="container__item">
+                <label for="bits">Max liczba bitów</label>
+                <input id="bits" type="number" min="3" max="53" value="8">
+            </div>
+            <button id="start">Wygeneruj liczbę</button>
+        </div>
+        <div class="container main">
+            <div>Liczba prób: <span id="tries">0</span></div>
+            <div>Aktualna liczba:</div>
+            <div id="number">-</div>
+            <div id="loader"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+            <div id="prime">Liczba jest prawdopodobnie pierwsza!</div>
+            <button id="abort">Przerwij</button>
+        </div>
+    </main>
+</body>
+</html>
