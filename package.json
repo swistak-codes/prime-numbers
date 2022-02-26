@@ -7,7 +7,7 @@
     "simple-benchmark": "node simple-benchmark.js",
     "generators-benchmark": "node generators-benchmark.js",
     "miller-rabin": "parcel",
-    "build": "parcel build --no-source-maps"
+    "build": "parcel build --no-source-maps --public-url /iframe-content/prime-numbers/"
   },
   "repository": {
     "type": "git",
