@@ -1,11 +1,11 @@
 const fs = require("fs");
 const benchmark = require("./benchmark");
 const functions = [
-    require("./tests/trial-division"),
-    require("./tests/trial-division-optimized1"),
-    require("./tests/trial-division-optimized2"),
+    require("../tests/trial-division"),
+    require("../tests/trial-division-optimized1"),
+    require("../tests/trial-division-optimized2"),
 ];
-const primes = Object.values(require("./primes.json")).filter(
+const primes = Object.values(require("../primes.json")).filter(
     (_, i) => i % 100 === 0
 );
 

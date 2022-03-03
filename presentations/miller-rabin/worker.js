@@ -15,12 +15,12 @@ const generatePrime = function (bits) {
         // podnosimy licznik prób
         tries++;
         // losujemy liczbę o wskazanej liczbie bitów;
-        // z racji tego jak działa generator liczb pseudolosowych w JS, ograniczamy tylko od góry
+        // z racji tego, jak działa generator liczb pseudolosowych w JS, ograniczamy tylko od góry
         const n = random(
             5,
             bits === 53 ? Number.MAX_SAFE_INTEGER : 2 ** bits - 1
         );
-        // sprawdzamy czy liczba jest pierwsza
+        // sprawdzamy, czy liczba jest pierwsza
         const result = millerRabin(Number(n), k);
         if (result) {
             // jeśli jest pierwsza, zakończmy działanie

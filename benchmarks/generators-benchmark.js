@@ -1,9 +1,9 @@
 const fs = require("fs");
 const benchmark = require("./benchmark");
 const functions = [
-    require("./generators/naive"),
-    require("./generators/eratosthenes"),
-    require("./generators/sundaram"),
+    require("../generators/naive"),
+    require("../generators/eratosthenes"),
+    require("../generators/sundaram"),
 ];
 
 const limits = Array.from(Array(1000).keys()).map((x) => 100 * (x + 1));

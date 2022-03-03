@@ -1,39 +1,6 @@
 const random = require("../helpers/random");
-
-function modPow(b, e, m) {
-    // 1. Ustawiamy c = 1
-    let c = 1;
-    // 2. Obliczamy resztę z dzielenia podstawy przez moduł: b = b mod m
-    b = b % m;
-    // 3. Tak długo, jak wykładnik e jest większy od zera:
-    while (e > 0) {
-        // 3.1. Jeśli wykładnik jest nieparzysty, wtedy c = (c * b) mod m
-        if ((e & 1) !== 0) {
-            c = (c * b) % m;
-        }
-        // 3.2. Obliczamy nowy wykładnik: e = e/2 = e >> 1
-        e = e >> 1;
-        // 3.3. Liczymy nową podstawę: b = b^2 mod m
-        b = b ** 2 % m;
-    }
-    // 4. Zwracamy wynik c.
-    return c;
-}
-
-function factorize(x) {
-    // 1. Ustawiamy s = 0 oraz d = x.
-    let s = 0;
-    let d = x;
-    // 2. Dopóki d jest parzyste:
-    while ((d & 1) === 0) {
-        // 2.1. Podziel całkowitoliczbowo mnożnik przez 2
-        d = Math.trunc(d / 2);
-        // 2.2. Zwiększ s: s = s + 1;
-        s++;
-    }
-    // 3. Zwróć s i d.
-    return { s, d };
-}
+const modPow = require("../helpers/mod-pow");
+const factorize = require("../helpers/factorize");
 
 function millerRabin(n, k) {
     // 1. Odrzućmy dwa skrajne przypadki: 2 i 3

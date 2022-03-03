@@ -4,8 +4,9 @@
   "description": "prime-numbers",
   "source": "presentations/miller-rabin/index.html",
   "scripts": {
-    "simple-benchmark": "node simple-benchmark.js",
-    "generators-benchmark": "node generators-benchmark.js",
+    "simple-benchmark": "node benchmarks/simple-benchmark.js",
+    "advanced-benchmark": "node benchmarks/advanced-benchmark.js",
+    "generators-benchmark": "node benchmarks/generators-benchmark.js",
     "miller-rabin": "parcel",
     "build": "parcel build --no-source-maps --public-url /iframe-content/prime-numbers/"
   },
