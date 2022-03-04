@@ -1,6 +1,18 @@
 const random = require("../helpers/random");
 const modPow = require("../helpers/mod-pow");
 
+function modulo(a, b) {
+    let r = a % b;
+    if (r < 0) {
+        if (b > 0) {
+            r = r + b;
+        } else {
+            r = r - b;
+        }
+    }
+    return r;
+}
+
 /**
  * Funkcja obliczająca symbol Jacobiego
  * @param a
@@ -8,14 +20,25 @@ const modPow = require("../helpers/mod-pow");
  * @returns {number}
  */
 function jacobi(a, n) {
-    if (n <= 0 || (n & 1) !== 0) return 0;
-    a = a % n;
+    if (n <= 0 || n % 2 === 0) return 0;
     let result = 1;
-    while (a != 0) {
-        while ((a & 1) === 0) {
+    if (a < 0) {
+        a = -a;
+        if (n % 4 === 3) {
+            result = -result;
+        }
+    }
+    if (a === 1) return result;
+    while (a !== 0) {
+        if (a < 0) {
+            a = -a;
+            if (n % 4 === 3) {
+                result = -result;
+            }
+        }
+        while (a % 2 === 0) {
             a = Math.trunc(a / 2);
-            let r = n % 8;
-            if (r === 3 || r === 5) {
+            if (n % 8 === 3 || n % 8 === 5) {
                 result = -result;
             }
         }
@@ -23,7 +46,10 @@ function jacobi(a, n) {
         if (a % 4 === 3 && n % 4 === 3) {
             result = -result;
         }
-        a = a % n;
+        a %= n;
+        if (a > Math.trunc(n / 2)) {
+            a = a - n;
+        }
     }
     return n === 1 ? result : 0;
 }
@@ -46,7 +72,7 @@ function solovayStrassen(n, k) {
         // obliczamy a^((n-1)/2) mod n
         const mod = modPow(a, (n - 1) / 2, n);
         // jeżeli jest różny od wartości x, liczba jest złożona
-        if (mod !== x % n) {
+        if (mod !== modulo(x, n)) {
             return false;
         }
     }
