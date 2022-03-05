@@ -20,11 +20,11 @@ const functions = [
     (n) => millerRabin(n, 5),
     (n) => millerRabin(n, 10),
     (n) => millerRabin(n, 100),
-    millerRabinDet,
     (n) => solovoyStrassen(n, 1),
     (n) => solovoyStrassen(n, 5),
     (n) => solovoyStrassen(n, 10),
     (n) => solovoyStrassen(n, 100),
+    millerRabinDet,
 ];
 
 const result = benchmark(functions, primes, 100);

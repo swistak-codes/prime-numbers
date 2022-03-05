@@ -5,7 +5,9 @@ const millerRabin = require("../tests/miller-rabin");
 const millerRabinDet = require("../tests/miller-rabin-deterministic");
 const solovoyStrassen = require("../tests/solovay-strassen");
 
-const numbers = Array.from({ length: 99998 }).map((_, i) => i + 2);
+const numbers = Array.from({ length: 999998 })
+    .map((_, i) => i + 2)
+    .filter((x) => x % 2 !== 0);
 
 const functions = [
     (n) => fermat(n, 1),
@@ -16,7 +18,6 @@ const functions = [
     (n) => millerRabin(n, 5),
     (n) => millerRabin(n, 10),
     (n) => millerRabin(n, 100),
-    millerRabinDet,
     (n) => solovoyStrassen(n, 1),
     (n) => solovoyStrassen(n, 5),
     (n) => solovoyStrassen(n, 10),
@@ -32,7 +33,6 @@ for (const number of numbers) {
     for (let i = 0; i < 100; i++) {
         for (const func of functions) {
             let sum = errors.get(func) || 0;
-            console.log(i);
             const isProbablePrime = func(number);
             if (isProbablePrime !== isPrime) {
                 sum += 1;
@@ -40,10 +40,13 @@ for (const number of numbers) {
             errors.set(func, sum);
         }
     }
+    const isProbableDet = millerRabinDet(number);
+    errors.set(millerRabinDet, isProbableDet !== isPrime ? 1 : 0);
     for (const func of functions) {
         const sum = errors.get(func);
         line.push(sum);
     }
+    line.push(errors.get(millerRabinDet));
 
     result.push(line);
 }
